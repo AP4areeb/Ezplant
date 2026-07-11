@@ -2,7 +2,7 @@
 #include <servo.h>
 
 #define sensorIn A0
-#define sensorPower A0
+#define sensorPower 5
 #define servoOut 3
 #define valveRelay 4
 
@@ -23,6 +23,7 @@ void loop()
   {
     for(int i=0,i>90,i++)
       {
+        digitalWrite(valveRelay,HIGH);
         spread.write(45+i);
         delay(750);
       }
