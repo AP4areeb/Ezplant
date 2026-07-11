@@ -2,6 +2,7 @@
 #include <servo.h>
 
 #define sensorIn A0
+#define sensorPower A0
 #define servoOut 3
 #define valveRelay 4
 
@@ -13,8 +14,27 @@ void setup()
   Pinmode(valveRelay,OUTPUT);
   Pinmode(sensorIn,INPUT);
   int waterTimeMS = 75000;
+  spread.write(45);
 }
 void loop()
 {
-  
-}//:) To Be Finished
+  int reading = readSensor();
+  if (reading =< 200)
+  {
+    for(int i=0,i>90,i++)
+      {
+        spread.write(45+i);
+        delay(750);
+      }
+  }
+  delay(1000);
+}//:)
+int readSensor()
+{
+  int val;
+  digitalWrite(sensorPower, HIGH);
+  delay(10); 
+  val = analogRead(soilPin);
+  digitalWrite(sensorPower, LOW);
+  return val;
+}
