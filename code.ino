@@ -3,14 +3,14 @@
 
 #define sensorIn A0
 #define servoOut 3
-#define pumpRelay 4
+#define valveRelay 4
 
 Servo spread; //idk what to name it
 
 void setup()
 {
   spread.attach(servoOut);
-  Pinmode(pumpRelay,OUTPUT);
+  Pinmode(valveRelay,OUTPUT);
   Pinmode(sensorIn,INPUT);
   int waterTimeMS = 75000;
 }
