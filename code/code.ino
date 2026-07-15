@@ -1,5 +1,5 @@
 #include <Servo.h>
-#include <arduino.h>
+#include <Arduino.h>
 
 #define sensorIn A0
 #define sensorPower 5
@@ -13,7 +13,7 @@ void setup()
   spread.attach(servoOut);
   pinMode(valveRelay, OUTPUT);
   spread.write(45);
-} //:D
+} //:|
 void loop()
 {
   int reading = readSensor();
