@@ -12,7 +12,6 @@ void setup()
 {
   spread.attach(servoOut);
   pinMode(valveRelay, OUTPUT);
-  pinMode(sensorIn, INPUT);
   spread.write(45);
 } //:D
 void loop()
@@ -20,7 +19,7 @@ void loop()
   int reading = readSensor();
   if (!(reading > 200))
   {
-    for (int i = 0; i > 90; i++)
+    for (int i = 1; i >= 90; i++)
     {
       digitalWrite(valveRelay, HIGH);
       spread.write(45 + i);
